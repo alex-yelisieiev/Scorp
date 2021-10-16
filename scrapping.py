@@ -23,8 +23,7 @@ class Scraper(object):
                     # Add to the final answers
                     tagsWithKey[keyword] = fullUrl
 
-        for key in tagsWithKey.keys():
-            return tagsWithKey
+        return tagsWithKey
 
     def getScraps(self):
         try:
@@ -55,3 +54,6 @@ class Scraper(object):
             print(f'Search at {url} added')
         with open('./Scraps.json', 'w') as fileWrite:
             json.dump(data, fileWrite)
+
+    def runScan(self):
+        data = # TODO: Вот тут дописать лоад текущих тасков поиска и сам поиск
