@@ -11,4 +11,4 @@ Made by Alex Yelisieiev
 My facebook: https://www.facebook.com/profile.php?id=100015304577934
 '''
 print(banner, end='')
-print('For help print "help"')
+print('For help print \'help\'\n')
