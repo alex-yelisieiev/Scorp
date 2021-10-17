@@ -55,5 +55,23 @@ class Scraper(object):
         with open('./Scraps.json', 'w') as fileWrite:
             json.dump(data, fileWrite)
 
+    def delScrap(self, url):
+        try:
+            data = self.getScraps()
+            data.pop(url)
+            with open('./Scraps.json', 'w') as file:
+                json.dump(data, file)
+        except:
+            print('Such url doesn\'t exist')
+
     def runScan(self):
-        data = # TODO: Вот тут дописать лоад текущих тасков поиска и сам поиск
+        data = self.getScraps() # TODO: Вот тут дописать лоад текущих тасков поиска и сам поиск
+        if not data:
+            return
+        
+        # Search for all keywords
+        for key in data.keys(): # Keys are urls in Scraps.json
+            foundHrefs = self.wordSearch(*data[key], url=key)
+            if foundHrefs:
+                for keyword in foundHrefs.keys():
+                    print(f'Found url {foundHrefs[keyword]} for keyword \'{keyword}\'')
