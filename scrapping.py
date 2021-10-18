@@ -6,6 +6,14 @@ from urllib.parse import urljoin
 
 class Scraper(object):
 
+    def getFoundUrls(self):
+        try:
+            with open('./FoundUrls.json', 'r') as fileRead:
+                data = json.load(fileRead)
+                return data
+        except:
+            return None
+
     def wordSearch(self, *args, url):
         html = requests.get(url).text
         soup = bs4.BeautifulSoup(html, features='lxml')
@@ -21,7 +29,25 @@ class Scraper(object):
                     fullUrl = urljoin(url, tag.get('href'))
 
                     # Add to the final answers
-                    tagsWithKey[keyword] = fullUrl
+
+                    # Add a url to already found ones and check
+                    # wheteher it's already there. If so, ignore it
+                    # TODO: Finish this block
+                    try: # There might be need to replace all that by getFoundUrls function
+                        with open('./FoundUrls.json', 'r') as fileRead:
+                            data = json.load(fileRead)
+                            if fullUrl not in data:
+                                tagsWithKey[keyword] = fullUrl
+                                data.append(fullUrl)
+                                with open('./FoundUrls.json', 'r') as fileWrite:
+                                    json.dump(data, fileWrite)
+
+                    except:
+                        with open('./FoundUrls.json', 'w') as fileWrite:
+                            tagsWithKey[keyword] = fullUrl
+                            data = []
+                            data.append(fullUrl)
+                            json.dump(data, fileWrite)
 
         return tagsWithKey
 
@@ -43,9 +69,9 @@ class Scraper(object):
                 for keyword in args:
                     if keyword not in data[url]:
                         data[url].append(keyword)
+                        print(f'Search at {url} expanded')
                     else:
                         print(f'Word {keyword} is already in search unit')
-                print(f'Search at {url} expanded')
 
         # Make data if there is no previous info
         else:
@@ -65,7 +91,7 @@ class Scraper(object):
             print('Such url doesn\'t exist')
 
     def runScan(self):
-        data = self.getScraps() # TODO: Вот тут дописать лоад текущих тасков поиска и сам поиск
+        data = self.getScraps()
         if not data:
             return
         
