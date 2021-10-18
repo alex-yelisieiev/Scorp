@@ -6,9 +6,11 @@ banner = r''' ____
    \ `\____\ \____\ \_\ \__/.\_\ \ ,__/\ \ ,__/\/`____ \
     \/_____/\/____/\/_/\/__/\/_/\ \ \/  \ \ \/  `/___/> \
                                  \ \_\   \ \_\     /\___/
-                                  \/_/    \/_/     \/__/
-Made by Alex Yelisieiev
+                                  \/_/    \/_/     \/__/'''
+
+subBanner = '''Made by Alex Yelisieiev
 My facebook: https://www.facebook.com/profile.php?id=100015304577934
-'''
-print(banner, end='')
-print('For help print \'help\'\n')
+For help print \'help\'\n'''
+
+print(banner)
+print(subBanner)
