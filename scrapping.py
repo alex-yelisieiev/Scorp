@@ -6,6 +6,17 @@ from urllib.parse import urljoin
 
 class Scraper(object):
 
+    def delScrap(self, url, *args):
+        with self.getScraps() as scraps:
+            if scraps:
+                for keyword in args:
+                    try:
+                        scraps[url].remove(keyword)
+                    except:
+                        print(f'Word \'{keyword}\' isn\'t in search unit')
+            else:
+                print(f'There are no search data.\nCreate a search unit first.')
+    
     def getFoundUrls(self):
         try:
             with open('./FoundUrls.json', 'r') as fileRead:
@@ -71,7 +82,7 @@ class Scraper(object):
                         data[url].append(keyword)
                         print(f'Search at {url} expanded')
                     else:
-                        print(f'Word {keyword} is already in search unit')
+                        print(f'Word \'{keyword}\' is already in search unit')
 
         # Make data if there is no previous info
         else:
