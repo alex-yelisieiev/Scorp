@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 
 class Scraper(object):
 
-    def delScrap(self, url, *args):
+    def delScrap(self, url, *args): # BUG: arguments are strange
         with self.getScraps() as scraps:
             if scraps:
                 for keyword in args:
