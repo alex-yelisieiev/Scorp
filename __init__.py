@@ -1,4 +1,9 @@
-banner = r''' ____
+from rich.console import Console
+
+
+console = Console()
+
+banner = r'''  ____
 /\  _`\
 \ \,\L\_\    ___  _ __   __    _____   _____   __  __
  \/_\__ \   /'___/\`'__/'__`\ /\ '__`\/\ '__`\/\ \/\ \
@@ -9,8 +14,8 @@ banner = r''' ____
                                   \/_/    \/_/     \/__/'''
 
 subBanner = '''Made by Alex Yelisieiev
-My facebook: https://www.facebook.com/profile.php?id=100015304577934
-For help print \'help\'\n'''
+My facebook: [blue]https://www.facebook.com/profile.php?id=100015304577934[/blue]
+For help print [blue]\'help\'[blue]\n'''
 
-print(banner)
-print(subBanner)
+console.print(banner, style='cyan', highlight=False)
+console.print(subBanner, style='cyan', highlight=False)

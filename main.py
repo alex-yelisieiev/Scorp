@@ -1,3 +1,4 @@
+from re import S
 from scrapping import Scraper
 import __init__
 
@@ -6,11 +7,11 @@ import __init__
 # TODO: Add functions to clear Scraps.json and FoundUrls.json
 # TODO: Add voice commands (maybe)
 
-# TODO: Add rich module colorizing (already installed)
+# BUG: runScan shows even already found urls
 
 scrap = Scraper()
-scrap.addNewScrap('data', 'telegram', url='https://moodle3.chmnu.edu.ua/')
-scrap.delScrap('https://moodle3.chmnu.edu.ua/', 'telegram', 'data')
+scrap.addScrap('telegram', 'data', url='https://moodle3.chmnu.edu.ua/')
+scrap.delScrap('data', 'b', url='https://moodle3.chmnu.edu.ua/')
 scrap.runScan()
 
 input()
