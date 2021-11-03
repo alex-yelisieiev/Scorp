@@ -4,14 +4,14 @@ from rich.console import Console
 console = Console(style='cyan')
 
 banner = r'''
-  ██████  ▄████▄   ▒█████   ██▀███   ██▓███  
-▒██    ▒ ▒██▀ ▀█  ▒██▒  ██▒▓██ ▒ ██▒▓██░  ██▒
-░ ▓██▄   ▒▓█    ▄ ▒██░  ██▒▓██ ░▄█ ▒▓██░ ██▓▒
-  ▒   ██▒▒▓▓▄ ▄██▒▒██   ██░▒██▀▀█▄  ▒██▄█▓▒ ▒
-▒██████▒▒▒ ▓███▀ ░░ ████▓▒░░██▓ ▒██▒▒██▒ ░  ░
-▒ ▒▓▒ ▒ ░░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒▓ ░▒▓░▒▓▒░ ░  ░
-░ ░▒  ░ ░  ░  ▒     ░ ▒ ▒░   ░▒ ░ ▒░░▒ ░     
-░  ░  ░  ░        ░ ░ ░ ▒    ░░   ░ ░░       
+  ██████  ▄████▄   [blue]▒[/blue]█████   ██▀███   ██▓███  
+[blue]▒[/blue]██    [blue]▒[/blue] [blue]▒[/blue]██▀ ▀█  [blue]▒[/blue]██[blue]▒[/blue]  ██[blue]▒[/blue]▓██ [blue]▒[/blue] ██[blue]▒[/blue]▓██░  ██[blue]▒[/blue]
+░ ▓██▄   [blue]▒[/blue]▓█    ▄ [blue]▒[/blue]██░  ██[blue]▒[/blue]▓██ ░▄█ [blue]▒[/blue]▓██░ ██▓[blue]▒[/blue]
+  [blue]▒[/blue]   ██[blue]▒[/blue][blue]▒[/blue]▓▓▄ ▄██[blue]▒[/blue][blue]▒[/blue]██   ██░[blue]▒[/blue]██▀▀█▄  [blue]▒[/blue]██▄█▓[blue]▒[/blue] [blue]▒[/blue]
+[blue]▒[/blue]██████[blue]▒[/blue][blue]▒[/blue][blue]▒[/blue] ▓███▀ ░░ ████▓[blue]▒[/blue]░░██▓ [blue]▒[/blue]██[blue]▒[/blue][blue]▒[/blue]██[blue]▒[/blue] ░  ░
+[blue]▒[/blue] [blue]▒[/blue]▓[blue]▒[/blue] [blue]▒[/blue] ░░ ░[blue]▒[/blue] [blue]▒[/blue]  ░░ [blue]▒[/blue]░[blue]▒[/blue]░[blue]▒[/blue]░ ░ [blue]▒[/blue]▓ ░[blue]▒[/blue]▓░[blue]▒[/blue]▓[blue]▒[/blue]░ ░  ░
+░ ░[blue]▒[/blue]  ░ ░  ░  [blue]▒[/blue]     ░ [blue]▒[/blue] [blue]▒[/blue]░   ░[blue]▒[/blue] ░ [blue]▒[/blue]░░[blue]▒[/blue] ░     
+░  ░  ░  ░        ░ ░ ░ [blue]▒[/blue]    ░░   ░ ░░       
       ░  ░ ░          ░ ░     ░              
          ░                                   
 '''
