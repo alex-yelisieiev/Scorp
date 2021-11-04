@@ -4,9 +4,6 @@ import interact as inter
 import __init__
 
 
-# TODO: Add facebook scrapping (maybe also add friends
-# chains) with facebook scrapping module
-
 console = Console(style='cyan')
 scrap = Scraper()
 
