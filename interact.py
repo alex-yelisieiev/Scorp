@@ -21,7 +21,7 @@ def sayHi():
         Enter link: https://www.nytimes.com/
         Enter word(s): coronavirus, data leak
         Done! This will create a search unit with
-        keys 'coronavirus' and 'data leak'
+        'coronavirus' and 'data leak' keywords.
         To run scan print [white]scan[/white]
         Print [white]delete[/white] to remove word(s) from a search unit.
         
@@ -30,8 +30,10 @@ def sayHi():
         create search units everytime you run it. It won't
         show you a word if it was already found.
         
-        To refresh found words list print [white]refresh found[/white]
-        To refresh delete all search units print [white]refresh units[/white]
+        To clear found links list print [white]clear found links[/white].
+        To delete all search units(scraps) print [white]clear scraps[/white].
+        If you want to see current scraps, print [white]show scraps[/white].
+        If you want to see list of found links, print [white]show found links[/white].
         Print [white]esc[/white], [white]exit[/white] or [white]escape[/white] to exit.
         ''',
         highlight=False
