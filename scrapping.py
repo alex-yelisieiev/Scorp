@@ -109,6 +109,7 @@ class Scraper(object):
             data = {}
             data[url] = args
             console.print(f'Search at [white]{url}[/white] expanded')
+        
         with open('./Scraps.json', 'w') as fileWrite:
             json.dump(data, fileWrite)
 

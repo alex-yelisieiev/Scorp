@@ -1,5 +1,6 @@
 from rich import console
 from rich.console import Console
+from requests import get
 
 
 console = Console(style='cyan')
@@ -29,10 +30,10 @@ def sayHi():
         
         To refresh found words list print [white]refresh found[/white]
         To refresh delete all search units print [white]refresh units[/white]
+        Print [white]esc[/white], [white]exit[/white] or [white]escape[/white] to exit.
         ''',
         highlight=False
     )
-
 
 def anlz(scrapObject, inp: str):
     inp = str(inp).strip().lower()
@@ -41,16 +42,22 @@ def anlz(scrapObject, inp: str):
         sayHi()
 
     elif inp == 'add':
-        print('Enter link: ', end='')
+        console.print('Enter link: ', end='')
         link = str(input())
-        print('Enter word(s) divided by \', \': ')
-        words = str(input()).split(', ')
-        scrapObject.addScrap(*words, url=link)
+        try:
+            if get(link) == '200':
+                console.print('Enter word(s) divided by \', \': ')
+                words = str(input()).split(', ')
+                scrapObject.addScrap(*words, url=link)
+            else:
+                console.print('There\'s a problem with this page', style='red')
+        except:
+            console.print('There\'s a problem with this page', style='red')
 
     elif inp == 'delete':
-        print('Enter link: ', end='')
+        console.print('Enter link: ', end='')
         link = str(input())
-        print('Enter word(s) divided to be deleted by \', \': ')
+        console.print('Enter word(s) divided to be deleted by \', \': ')
         words = str(input()).split(', ')
         scrapObject.delScrap(*words, url=link)
     
@@ -62,3 +69,6 @@ def anlz(scrapObject, inp: str):
 
     elif inp == 'scan':
         scrapObject.runScan()
+
+    elif inp == 'esc' or inp == 'escape' or inp == 'exit':
+        quit()

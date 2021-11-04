@@ -11,6 +11,5 @@ import __init__
 
 scrap = Scraper()
 
-inter.anlz(scrap, input())
-
-input()
+while True:
+    inter.anlz(scrap, input())

@@ -5,15 +5,15 @@ console = Console(style='cyan')
 
 banner = r'''
   ██████  ▄████▄   ▒█████   ██▀███   ██▓███  
-▒██    ▒ ▒██▀ ▀█  ▒██▒  ██▒▓██ ▒ ██▒▓██░  ██▒
-░ ▓██▄   ▒▓█    ▄ ▒██░  ██▒▓██ ░▄█ ▒▓██░ ██▓▒
-  ▒   ██▒▒▓▓▄ ▄██▒▒██   ██░▒██▀▀█▄  ▒██▄█▓▒ ▒
-▒██████▒▒▒ ▓███▀ ░░ ████▓▒░░██▓ ▒██▒▒██▒ ░  ░
-▒ ▒▓▒ ▒ ░░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒▓ ░▒▓░▒▓▒░ ░  ░
-░ ░▒  ░ ░  ░  ▒     ░ ▒ ▒░   ░▒ ░ ▒░░▒ ░     
-░  ░  ░  ░        ░ ░ ░ ▒    ░░   ░ ░░       
-      ░  ░ ░          ░ ░     ░              
-         ░                                   
+▒██    ▒ ▒██▀ ▀█  ▒██▒  ██▒▓██ ▒ ██▒▓██[blue]░[/blue]  ██▒
+[blue]░[/blue] ▓██▄   ▒▓█    ▄ ▒██[blue]░[/blue]  ██▒▓██ [blue]░[/blue]▄█ ▒▓██[blue]░[/blue] ██▓▒
+  ▒   ██▒▒▓▓▄ ▄██▒▒██   ██[blue]░[/blue]▒██▀▀█▄  ▒██▄█▓▒ ▒
+▒██████▒▒▒ ▓███▀ [blue]░[/blue][blue]░[/blue] ████▓▒[blue]░[/blue][blue]░[/blue]██▓ ▒██▒▒██▒ [blue]░[/blue]  [blue]░[/blue]
+▒ ▒▓▒ ▒ [blue]░[/blue][blue]░[/blue] [blue]░[/blue]▒ ▒  [blue]░[/blue][blue]░[/blue] ▒[blue]░[/blue]▒[blue]░[/blue]▒[blue]░[/blue] [blue]░[/blue] ▒▓ [blue]░[/blue]▒▓[blue]░[/blue]▒▓▒[blue]░[/blue] [blue]░[/blue]  [blue]░[/blue]
+[blue]░[/blue] [blue]░[/blue]▒  [blue]░[/blue] [blue]░[/blue]  [blue]░[/blue]  ▒     [blue]░[/blue] ▒ ▒[blue]░[/blue]   [blue]░[/blue]▒ [blue]░[/blue] ▒[blue]░[/blue][blue]░[/blue]▒ [blue]░[/blue]     
+[blue]░[/blue]  [blue]░[/blue]  [blue]░[/blue]  [blue]░[/blue]        [blue]░[/blue] [blue]░[/blue] [blue]░[/blue] ▒    [blue]░[/blue][blue]░[/blue]   [blue]░[/blue] [blue]░[/blue][blue]░[/blue]       
+      [blue]░[/blue]  [blue]░[/blue] [blue]░[/blue]          [blue]░[/blue] [blue]░[/blue]     [blue]░[/blue]              
+         [blue]░[/blue]                                   
 '''
 
 subBanner = '''Made by Alex Yelisieiev
