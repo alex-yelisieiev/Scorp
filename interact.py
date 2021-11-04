@@ -9,7 +9,7 @@ console = Console(style='cyan')
 def sayHi():
     console.print(
         '''
-        Hey! Welcome to [white]Scorp[/white] - a tool for scrappig news,
+        Hey! Welcome to [white]Scorp[/white] - a tool for scrappig news pages,
         profiles or any pages containing links.
 
         If you want to search for some word(s), firstly
