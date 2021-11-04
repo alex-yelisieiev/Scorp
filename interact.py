@@ -1,3 +1,4 @@
+import requests
 from rich import console
 from rich.console import Console
 from requests import get
@@ -44,32 +45,47 @@ def anlz(scrapObject, inp: str):
 
     elif inp == 'add':
         console.print('Enter link: ', end='')
-        link = str(input())
-        try:
-            if get(link) == '200':
-                console.print('Enter word(s) divided by \', \': ')
-                words = str(input()).split(', ')
-                scrapObject.addScrap(*words, url=link)
-            else:
-                console.print('There\'s a problem with this page', style='red')
-        except:
-            console.print('There\'s a problem with this page', style='red')
+        link = str(input()).strip()
+        if link:
+            try:
+                response = get(link)
+                if response.status_code == 200:
+                    console.print('Enter word(s) divided by \', \': ', highlight=False)
+                    words = str(input()).split(', ')
+                    scrapObject.addScrap(*words, url=link)
+                else:
+                    console.print('[red]There\'s a problem with this page. Try another one[/red]')
+            except:
+                console.print('[red]There\'s a problem with this page. Try another one[/red]')
+        else:
+            console.print('Cancelled')
 
     elif inp == 'delete':
         console.print('Enter link: ', end='')
         link = str(input())
-        console.print('Enter word(s) divided to be deleted by \', \': ')
-        words = str(input()).split(', ')
-        scrapObject.delScrap(*words, url=link)
+        if link:
+            console.print('Enter word(s) divided to be deleted by \', \': ', highlight=False)
+            words = str(input()).split(', ')
+            scrapObject.delScrap(*words, url=link)
+        else:
+            console.print('Cancelled')
     
-    elif inp == 'refresh found':
+    elif inp == 'clear found links':
         scrapObject.clrFoundUrls()
+        console.print('Found links list cleared')
 
-    elif inp == 'refresh units':
+    elif inp == 'clear scraps':
         scrapObject.clrScraps()
+        console.print('Scraps list cleared')
 
     elif inp == 'scan':
         scrapObject.runScan()
+
+    elif inp == 'show scraps':
+        scrapObject.showScraps()
+        
+    elif inp == 'show found links':
+        scrapObject.showFoundUrls()
 
     elif inp == 'esc' or inp == 'escape' or inp == 'exit':
         quit()

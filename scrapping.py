@@ -24,6 +24,7 @@ class Scraper(object):
             for keyword in args:
                 try:
                     data[url].remove(keyword)
+                    console.print(f'Word [white]{keyword}[/white] deleted')
                 except:
                     console.print(
                         f'[red]Word [white]\'{keyword}\'[/white] isn\'t in search unit[/red]', highlight=False)
@@ -97,12 +98,14 @@ class Scraper(object):
             if url in data.keys():
                 for keyword in args:
                     if keyword not in data[url]:
-                        data[url].append(keyword)
+                        data[url].extend([keyword])
                         console.print(
                             f'Search at [white]{url}[/white] expanded')
                     else:
                         console.print(
                             f'[red]Word [white]\'{keyword}\'[/white] is already in search unit[/red]')
+            else:
+                data[url] = args
 
         # Make data if there is no previous info
         else:
@@ -112,6 +115,31 @@ class Scraper(object):
         
         with open('./Scraps.json', 'w') as fileWrite:
             json.dump(data, fileWrite)
+
+    def showScraps(self):
+        try:
+            with open('./Scraps.json', 'r') as fileRead:
+                data = dict(json.load(fileRead))
+                if data:
+                    for url in data.keys():
+                        words = '[cyan], [/cyan]'.join(data[url])
+                        console.print(f'Looking for words [white]{words}[/white] at [white]{url}[/white]', highlight=False)
+                else:
+                    console.print('[red]Nothing to show[/red]')
+        except:
+            console.print('[red]Nothing to show[/red]')
+
+    def showFoundUrls(self):
+        try:
+            with open('./FoundUrls.json', 'r') as fileRead:
+                data = dict(json.load(fileRead))
+                if data:
+                    links = '[cyan], [/cyan]'.join(data)
+                    console.print(f'Found links: {links}', highlight=False)
+                else:
+                    console.print('[red]Nothing to show[/red]')
+        except:
+            console.print('[red]Nothing to show[/red]')
 
     def runScan(self):
         data = self.getScraps()
