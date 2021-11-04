@@ -16,7 +16,7 @@ banner = r'''
          [blue]░[/blue]                                   
 '''
 
-subBanner = '''Made by Alex Yelisieiev
+subBanner = '''By Alex Yelisieiev
 My facebook: [white]https://www.facebook.com/profile.php?id=100015304577934[/white]
 For help print [white]\'help\'[white]\n'''
 

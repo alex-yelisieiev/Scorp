@@ -62,12 +62,12 @@ class Scraper(object):
                     try:
                         with open('./FoundUrls.json', 'r') as fileRead:
                             data = json.load(fileRead)
-                            if fullUrl.split('/')[-1] not in data:
+                            if fullUrl not in data:
                                 try:
                                     tagsWithKey[keyword].extend([fullUrl])
                                 except:
                                     tagsWithKey[keyword] = [fullUrl]
-                                data.append(fullUrl.split('/')[-1])
+                                data.append(fullUrl)
 
                             with open('./FoundUrls.json', 'w') as fileWrite:
                                 json.dump(data, fileWrite)
@@ -77,7 +77,7 @@ class Scraper(object):
                             tagsWithKey[keyword] = []
                             tagsWithKey[keyword].append(fullUrl)
                             data = []
-                            data.append(fullUrl.split('/')[-1])
+                            data.append(fullUrl)
                             json.dump(data, fileWrite)
         return tagsWithKey
 
@@ -132,10 +132,10 @@ class Scraper(object):
     def showFoundUrls(self):
         try:
             with open('./FoundUrls.json', 'r') as fileRead:
-                data = dict(json.load(fileRead))
+                data = json.load(fileRead)
                 if data:
-                    links = '[cyan], [/cyan]'.join(data)
-                    console.print(f'Found links: {links}', highlight=False)
+                    links = '[cyan],[/cyan]\n'.join(data)
+                    console.print(f'Found links:\n{links}', highlight=False)
                 else:
                     console.print('[red]Nothing to show[/red]')
         except:

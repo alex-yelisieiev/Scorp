@@ -34,6 +34,7 @@ def sayHi():
         To delete all search units(scraps) print [white]clear scraps[/white].
         If you want to see current scraps, print [white]show scraps[/white].
         If you want to see list of found links, print [white]show found links[/white].
+        Having changed your mind, you can undo not finished action by pressing [white]Enter[/white].
         Print [white]esc[/white], [white]exit[/white] or [white]escape[/white] to exit.
         ''',
         highlight=False
@@ -47,13 +48,13 @@ def anlz(scrapObject, inp: str):
 
     elif inp == 'add':
         console.print('Enter link: ', end='')
-        link = str(input()).strip()
+        link = str(console.input('>>> ')).strip()
         if link:
             try:
                 response = get(link)
                 if response.status_code == 200:
                     console.print('Enter word(s) divided by \', \': ', highlight=False)
-                    words = str(input()).split(', ')
+                    words = str(console.input('>>> ')).split(', ')
                     scrapObject.addScrap(*words, url=link)
                 else:
                     console.print('[red]There\'s a problem with this page. Try another one[/red]')
@@ -64,10 +65,10 @@ def anlz(scrapObject, inp: str):
 
     elif inp == 'delete':
         console.print('Enter link: ', end='')
-        link = str(input())
+        link = str(console.input('>>> '))
         if link:
             console.print('Enter word(s) divided to be deleted by \', \': ', highlight=False)
-            words = str(input()).split(', ')
+            words = str(console.input('>>> ')).split(', ')
             scrapObject.delScrap(*words, url=link)
         else:
             console.print('Cancelled')
