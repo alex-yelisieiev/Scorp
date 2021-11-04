@@ -20,7 +20,7 @@ def sayHi():
         Enter word(s): coronavirus, data leak
         Done! This will create a search unit with keys 'coronavirus' and 'data leak'
         To run scan print [white]scan[/white]
-        Print [white]delete[/white] to remove a word(s) from a search unit.
+        Print [white]delete[/white] to remove word(s) from a search unit.
         
         [white]Warning![/white] The program remembers all your search units
         and already found words, so there's no need to
@@ -39,3 +39,26 @@ def anlz(scrapObject, inp: str):
     
     if '-h' in inp or 'help' in inp:
         sayHi()
+
+    elif inp == 'add':
+        print('Enter link: ', end='')
+        link = str(input())
+        print('Enter word(s) divided by \', \': ')
+        words = str(input()).split(', ')
+        scrapObject.addScrap(*words, url=link)
+
+    elif inp == 'delete':
+        print('Enter link: ', end='')
+        link = str(input())
+        print('Enter word(s) divided to be deleted by \', \': ')
+        words = str(input()).split(', ')
+        scrapObject.delScrap(*words, url=link)
+    
+    elif inp == 'refresh found':
+        scrapObject.clrFoundUrls()
+
+    elif inp == 'refresh units':
+        scrapObject.clrScraps()
+
+    elif inp == 'scan':
+        scrapObject.runScan()

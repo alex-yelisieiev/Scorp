@@ -124,10 +124,3 @@ class Scraper(object):
                         for url in urlList:
                             console.print(
                                 f'Found url [white]{url}[/white] for keyword [white]\'{keyword}\'[/white]', highlight=False)
-
-    def delFoundInfo(self):
-        try:
-            with open('./FoundUrls.json', 'w'):
-                console.print('Info\'s been deleted succesfully')
-        except:
-            console.print('[red]No info to be deleted[/red]')
