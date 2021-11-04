@@ -19,7 +19,8 @@ def sayHi():
         add
         Enter link: https://www.nytimes.com/
         Enter word(s): coronavirus, data leak
-        Done! This will create a search unit with keys 'coronavirus' and 'data leak'
+        Done! This will create a search unit with
+        keys 'coronavirus' and 'data leak'
         To run scan print [white]scan[/white]
         Print [white]delete[/white] to remove word(s) from a search unit.
         
