@@ -106,6 +106,7 @@ class Scraper(object):
                             f'[red]Word [white]\'{keyword}\'[/white] is already in search unit[/red]')
             else:
                 data[url] = args
+                console.print(f'Search at [white]{url}[/white] expanded')
 
         # Make data if there is no previous info
         else:
